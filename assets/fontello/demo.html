@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <meta charset="UTF-8">
+  <style>
+    html {
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    a:focus {
+      outline: thin dotted #333;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+    a:hover,
+    a:active {
+      outline: 0;
+    }
+    input {
+      margin: 0;
+      font-size: 100%;
+      vertical-align: middle;
+      *overflow: visible;
+      line-height: normal;
+    }
+    input::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      color: #333;
+      background-color: #fff;
+    }
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #005580;
+      text-decoration: underline;
+    }
+    .row {
+      margin-left: -20px;
+      *zoom: 1;
+    }
+    .row:before,
+    .row:after {
+      display: table;
+      content: "";
+      line-height: 0;
+    }
+    .row:after {
+      clear: both;
+    }
+    .span3 {
+      float: left;
+      min-height: 1px;
+      margin-left: 20px;
+      width: 220px;
+    }
+    .container {
+      width: 940px;
+      margin-right: auto;
+      margin-left: auto;
+      *zoom: 1;
+    }
+    .container:before,
+    .container:after {
+      display: table;
+      content: "";
+      line-height: 0;
+    }
+    .container:after {
+      clear: both;
+    }
+    small {
+      font-size: 85%;
+    }
+    h1 {
+      margin: 10px 0;
+      font-family: inherit;
+      font-weight: bold;
+      line-height: 20px;
+      color: inherit;
+      text-rendering: optimizelegibility;
+      line-height: 40px;
+      font-size: 38.5px;
+    }
+    h1 small {
+      font-weight: normal;
+      line-height: 1;
+      color: #999;
+      font-size: 24.5px;
+    }
+
+    body {
+      margin-top: 90px;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      margin-left: -480px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding-top: 10px;
+      z-index: 10;
+    }
+    .footer {
+      color: #ddd;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .footer a {
+      color: #ccc;
+      text-decoration: underline;
+    }
+    .the-icons {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    .switch {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      color: #666;
+    }
+    .switch input {
+      margin-right: 0.3em;
+    }
+    .codesOn .i-name {
+      display: none;
+    }
+    .codesOn .i-code {
+      display: inline;
+    }
+    .i-code {
+      display: none;
+    }
+    @font-face {
+      font-family: 'pyx';
+      src: url('./font/pyx.eot?71426494');
+      src: url('./font/pyx.eot?71426494#iefix') format('embedded-opentype'),
+           url('./font/pyx.woff?71426494') format('woff'),
+           url('./font/pyx.ttf?71426494') format('truetype'),
+           url('./font/pyx.svg?71426494#pyx') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .demo-icon {
+      font-family: "pyx";
+      font-style: normal;
+      font-weight: normal;
+      speak: never;
+     
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+     
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+     
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+     
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
+    </style>
+    <link rel="stylesheet" href="css/animation.css"><!--[if IE 7]><link rel="stylesheet" href="css/" + font.fontname + "-ie7.css"><![endif]-->
+    <script>
+      function toggleCodes(on) {
+        var obj = document.getElementById('icons');
+      
+        if (on) {
+          obj.className += ' codesOn';
+        } else {
+          obj.className = obj.className.replace(' codesOn', '');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container header">
+      <h1>pyx <small>font demo</small></h1>
+      <label class="switch">
+        <input type="checkbox" onclick="toggleCodes(this.checked)">show codes
+      </label>
+    </div>
+    <div class="container" id="icons">
+      <div class="row">
+        <div class="span3" title="Code: 0xe800">
+          <i class="demo-icon pyx-menu">&#xe800;</i> <span class="i-name">pyx-menu</span><span class="i-code">0xe800</span>
+        </div>
+        <div class="span3" title="Code: 0xe801">
+          <i class="demo-icon pyx-arrow_back">&#xe801;</i> <span class="i-name">pyx-arrow_back</span><span class="i-code">0xe801</span>
+        </div>
+        <div class="span3" title="Code: 0xe802">
+          <i class="demo-icon pyx-arrow_forward">&#xe802;</i> <span class="i-name">pyx-arrow_forward</span><span class="i-code">0xe802</span>
+        </div>
+        <div class="span3" title="Code: 0xe803">
+          <i class="demo-icon pyx-check">&#xe803;</i> <span class="i-name">pyx-check</span><span class="i-code">0xe803</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe804">
+          <i class="demo-icon pyx-close">&#xe804;</i> <span class="i-name">pyx-close</span><span class="i-code">0xe804</span>
+        </div>
+        <div class="span3" title="Code: 0xe805">
+          <i class="demo-icon pyx-add">&#xe805;</i> <span class="i-name">pyx-add</span><span class="i-code">0xe805</span>
+        </div>
+        <div class="span3" title="Code: 0xe806">
+          <i class="demo-icon pyx-circle">&#xe806;</i> <span class="i-name">pyx-circle</span><span class="i-code">0xe806</span>
+        </div>
+        <div class="span3" title="Code: 0xe807">
+          <i class="demo-icon pyx-triangle">&#xe807;</i> <span class="i-name">pyx-triangle</span><span class="i-code">0xe807</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe808">
+          <i class="demo-icon pyx-square">&#xe808;</i> <span class="i-name">pyx-square</span><span class="i-code">0xe808</span>
+        </div>
+        <div class="span3" title="Code: 0xe809">
+          <i class="demo-icon pyx-pentagon">&#xe809;</i> <span class="i-name">pyx-pentagon</span><span class="i-code">0xe809</span>
+        </div>
+        <div class="span3" title="Code: 0xe80a">
+          <i class="demo-icon pyx-hexagon">&#xe80a;</i> <span class="i-name">pyx-hexagon</span><span class="i-code">0xe80a</span>
+        </div>
+        <div class="span3" title="Code: 0xe80b">
+          <i class="demo-icon pyx-circle_outlined">&#xe80b;</i> <span class="i-name">pyx-circle_outlined</span><span class="i-code">0xe80b</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe80c">
+          <i class="demo-icon pyx-triangle_outlined">&#xe80c;</i> <span class="i-name">pyx-triangle_outlined</span><span class="i-code">0xe80c</span>
+        </div>
+        <div class="span3" title="Code: 0xe80d">
+          <i class="demo-icon pyx-square_outline">&#xe80d;</i> <span class="i-name">pyx-square_outline</span><span class="i-code">0xe80d</span>
+        </div>
+        <div class="span3" title="Code: 0xe80e">
+          <i class="demo-icon pyx-pentagon_outline">&#xe80e;</i> <span class="i-name">pyx-pentagon_outline</span><span class="i-code">0xe80e</span>
+        </div>
+        <div class="span3" title="Code: 0xe80f">
+          <i class="demo-icon pyx-hexagon_outline">&#xe80f;</i> <span class="i-name">pyx-hexagon_outline</span><span class="i-code">0xe80f</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe810">
+          <i class="demo-icon pyx-fast_rewind">&#xe810;</i> <span class="i-name">pyx-fast_rewind</span><span class="i-code">0xe810</span>
+        </div>
+        <div class="span3" title="Code: 0xe811">
+          <i class="demo-icon pyx-skip_previous">&#xe811;</i> <span class="i-name">pyx-skip_previous</span><span class="i-code">0xe811</span>
+        </div>
+        <div class="span3" title="Code: 0xe812">
+          <i class="demo-icon pyx-play_arrow">&#xe812;</i> <span class="i-name">pyx-play_arrow</span><span class="i-code">0xe812</span>
+        </div>
+        <div class="span3" title="Code: 0xe813">
+          <i class="demo-icon pyx-skip_next">&#xe813;</i> <span class="i-name">pyx-skip_next</span><span class="i-code">0xe813</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe814">
+          <i class="demo-icon pyx-fast_forward">&#xe814;</i> <span class="i-name">pyx-fast_forward</span><span class="i-code">0xe814</span>
+        </div>
+        <div class="span3" title="Code: 0xe815">
+          <i class="demo-icon pyx-arrow_right">&#xe815;</i> <span class="i-name">pyx-arrow_right</span><span class="i-code">0xe815</span>
+        </div>
+        <div class="span3" title="Code: 0xe816">
+          <i class="demo-icon pyx-arrow_left">&#xe816;</i> <span class="i-name">pyx-arrow_left</span><span class="i-code">0xe816</span>
+        </div>
+        <div class="span3" title="Code: 0xe817">
+          <i class="demo-icon pyx-arrow_drop_up">&#xe817;</i> <span class="i-name">pyx-arrow_drop_up</span><span class="i-code">0xe817</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe818">
+          <i class="demo-icon pyx-arrow_drop_down">&#xe818;</i> <span class="i-name">pyx-arrow_drop_down</span><span class="i-code">0xe818</span>
+        </div>
+        <div class="span3" title="Code: 0xe819">
+          <i class="demo-icon pyx-directions_bus">&#xe819;</i> <span class="i-name">pyx-directions_bus</span><span class="i-code">0xe819</span>
+        </div>
+        <div class="span3" title="Code: 0xe81a">
+          <i class="demo-icon pyx-directions_transit">&#xe81a;</i> <span class="i-name">pyx-directions_transit</span><span class="i-code">0xe81a</span>
+        </div>
+        <div class="span3" title="Code: 0xe81b">
+          <i class="demo-icon pyx-directions_car">&#xe81b;</i> <span class="i-name">pyx-directions_car</span><span class="i-code">0xe81b</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe81c">
+          <i class="demo-icon pyx-search">&#xe81c;</i> <span class="i-name">pyx-search</span><span class="i-code">0xe81c</span>
+        </div>
+        <div class="span3" title="Code: 0xe81e">
+          <i class="demo-icon pyx-directions_taxi">&#xe81e;</i> <span class="i-name">pyx-directions_taxi</span><span class="i-code">0xe81e</span>
+        </div>
+        <div class="span3" title="Code: 0xe81f">
+          <i class="demo-icon pyx-check_box_filled">&#xe81f;</i> <span class="i-name">pyx-check_box_filled</span><span class="i-code">0xe81f</span>
+        </div>
+        <div class="span3" title="Code: 0xe820">
+          <i class="demo-icon pyx-check_box">&#xe820;</i> <span class="i-name">pyx-check_box</span><span class="i-code">0xe820</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe821">
+          <i class="demo-icon pyx-check_box_outline_blank">&#xe821;</i> <span class="i-name">pyx-check_box_outline_blank</span><span class="i-code">0xe821</span>
+        </div>
+        <div class="span3" title="Code: 0xe822">
+          <i class="demo-icon pyx-indeterminate_check_box">&#xe822;</i> <span class="i-name">pyx-indeterminate_check_box</span><span class="i-code">0xe822</span>
+        </div>
+        <div class="span3" title="Code: 0xe823">
+          <i class="demo-icon pyx-indeterminate_check_box-filled">&#xe823;</i> <span class="i-name">pyx-indeterminate_check_box-filled</span><span class="i-code">0xe823</span>
+        </div>
+        <div class="span3" title="Code: 0xe824">
+          <i class="demo-icon pyx-mail_outline">&#xe824;</i> <span class="i-name">pyx-mail_outline</span><span class="i-code">0xe824</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe825">
+          <i class="demo-icon pyx-bookmark_outline">&#xe825;</i> <span class="i-name">pyx-bookmark_outline</span><span class="i-code">0xe825</span>
+        </div>
+        <div class="span3" title="Code: 0xe826">
+          <i class="demo-icon pyx-bookmark">&#xe826;</i> <span class="i-name">pyx-bookmark</span><span class="i-code">0xe826</span>
+        </div>
+        <div class="span3" title="Code: 0xe827">
+          <i class="demo-icon pyx-account_circle_filled">&#xe827;</i> <span class="i-name">pyx-account_circle_filled</span><span class="i-code">0xe827</span>
+        </div>
+        <div class="span3" title="Code: 0xe828">
+          <i class="demo-icon pyx-person_outline">&#xe828;</i> <span class="i-name">pyx-person_outline</span><span class="i-code">0xe828</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe829">
+          <i class="demo-icon pyx-chat_bubble">&#xe829;</i> <span class="i-name">pyx-chat_bubble</span><span class="i-code">0xe829</span>
+        </div>
+        <div class="span3" title="Code: 0xe82a">
+          <i class="demo-icon pyx-chat_bubble_outline">&#xe82a;</i> <span class="i-name">pyx-chat_bubble_outline</span><span class="i-code">0xe82a</span>
+        </div>
+        <div class="span3" title="Code: 0xe82b">
+          <i class="demo-icon pyx-light_mode">&#xe82b;</i> <span class="i-name">pyx-light_mode</span><span class="i-code">0xe82b</span>
+        </div>
+        <div class="span3" title="Code: 0xe82c">
+          <i class="demo-icon pyx-dark_mode">&#xe82c;</i> <span class="i-name">pyx-dark_mode</span><span class="i-code">0xe82c</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe82d">
+          <i class="demo-icon pyx-delete">&#xe82d;</i> <span class="i-name">pyx-delete</span><span class="i-code">0xe82d</span>
+        </div>
+        <div class="span3" title="Code: 0xe82e">
+          <i class="demo-icon pyx-radio_button_checked">&#xe82e;</i> <span class="i-name">pyx-radio_button_checked</span><span class="i-code">0xe82e</span>
+        </div>
+        <div class="span3" title="Code: 0xe82f">
+          <i class="demo-icon pyx-radio_button_unchecked">&#xe82f;</i> <span class="i-name">pyx-radio_button_unchecked</span><span class="i-code">0xe82f</span>
+        </div>
+        <div class="span3" title="Code: 0xe830">
+          <i class="demo-icon pyx-star">&#xe830;</i> <span class="i-name">pyx-star</span><span class="i-code">0xe830</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe831">
+          <i class="demo-icon pyx-star_border">&#xe831;</i> <span class="i-name">pyx-star_border</span><span class="i-code">0xe831</span>
+        </div>
+        <div class="span3" title="Code: 0xe832">
+          <i class="demo-icon pyx-folder">&#xe832;</i> <span class="i-name">pyx-folder</span><span class="i-code">0xe832</span>
+        </div>
+        <div class="span3" title="Code: 0xe833">
+          <i class="demo-icon pyx-navigate_before">&#xe833;</i> <span class="i-name">pyx-navigate_before</span><span class="i-code">0xe833</span>
+        </div>
+        <div class="span3" title="Code: 0xe834">
+          <i class="demo-icon pyx-navigate_next">&#xe834;</i> <span class="i-name">pyx-navigate_next</span><span class="i-code">0xe834</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe835">
+          <i class="demo-icon pyx-file_upload">&#xe835;</i> <span class="i-name">pyx-file_upload</span><span class="i-code">0xe835</span>
+        </div>
+        <div class="span3" title="Code: 0xe836">
+          <i class="demo-icon pyx-file_download">&#xe836;</i> <span class="i-name">pyx-file_download</span><span class="i-code">0xe836</span>
+        </div>
+        <div class="span3" title="Code: 0xe837">
+          <i class="demo-icon pyx-folder_filled">&#xe837;</i> <span class="i-name">pyx-folder_filled</span><span class="i-code">0xe837</span>
+        </div>
+        <div class="span3" title="Code: 0xe838">
+          <i class="demo-icon pyx-mobile_friendly">&#xe838;</i> <span class="i-name">pyx-mobile_friendly</span><span class="i-code">0xe838</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe839">
+          <i class="demo-icon pyx-attach_file">&#xe839;</i> <span class="i-name">pyx-attach_file</span><span class="i-code">0xe839</span>
+        </div>
+        <div class="span3" title="Code: 0xe83a">
+          <i class="demo-icon pyx-today">&#xe83a;</i> <span class="i-name">pyx-today</span><span class="i-code">0xe83a</span>
+        </div>
+        <div class="span3" title="Code: 0xe83b">
+          <i class="demo-icon pyx-mode_edit">&#xe83b;</i> <span class="i-name">pyx-mode_edit</span><span class="i-code">0xe83b</span>
+        </div>
+        <div class="span3" title="Code: 0xe83c">
+          <i class="demo-icon pyx-share">&#xe83c;</i> <span class="i-name">pyx-share</span><span class="i-code">0xe83c</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe83d">
+          <i class="demo-icon pyx-cancel">&#xe83d;</i> <span class="i-name">pyx-cancel</span><span class="i-code">0xe83d</span>
+        </div>
+        <div class="span3" title="Code: 0xe83e">
+          <i class="demo-icon pyx-keyboard">&#xe83e;</i> <span class="i-name">pyx-keyboard</span><span class="i-code">0xe83e</span>
+        </div>
+        <div class="span3" title="Code: 0xe83f">
+          <i class="demo-icon pyx-error">&#xe83f;</i> <span class="i-name">pyx-error</span><span class="i-code">0xe83f</span>
+        </div>
+        <div class="span3" title="Code: 0xe840">
+          <i class="demo-icon pyx-settings">&#xe840;</i> <span class="i-name">pyx-settings</span><span class="i-code">0xe840</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe841">
+          <i class="demo-icon pyx-settings_filled">&#xe841;</i> <span class="i-name">pyx-settings_filled</span><span class="i-code">0xe841</span>
+        </div>
+        <div class="span3" title="Code: 0xe842">
+          <i class="demo-icon pyx-check_small">&#xe842;</i> <span class="i-name">pyx-check_small</span><span class="i-code">0xe842</span>
+        </div>
+        <div class="span3" title="Code: 0xe843">
+          <i class="demo-icon pyx-check_indeterminate_small">&#xe843;</i> <span class="i-name">pyx-check_indeterminate_small</span><span class="i-code">0xe843</span>
+        </div>
+        <div class="span3" title="Code: 0xe844">
+          <i class="demo-icon pyx-access_time">&#xe844;</i> <span class="i-name">pyx-access_time</span><span class="i-code">0xe844</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe845">
+          <i class="demo-icon pyx-keyboard_return">&#xe845;</i> <span class="i-name">pyx-keyboard_return</span><span class="i-code">0xe845</span>
+        </div>
+        <div class="span3" title="Code: 0xe846">
+          <i class="demo-icon pyx-sticker">&#xe846;</i> <span class="i-name">pyx-sticker</span><span class="i-code">0xe846</span>
+        </div>
+        <div class="span3" title="Code: 0xe847">
+          <i class="demo-icon pyx-more">&#xe847;</i> <span class="i-name">pyx-more</span><span class="i-code">0xe847</span>
+        </div>
+        <div class="span3" title="Code: 0xe848">
+          <i class="demo-icon pyx-mic">&#xe848;</i> <span class="i-name">pyx-mic</span><span class="i-code">0xe848</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span3" title="Code: 0xe849">
+          <i class="demo-icon pyx-language">&#xe849;</i> <span class="i-name">pyx-language</span><span class="i-code">0xe849</span>
+        </div>
+        <div class="span3" title="Code: 0xe84a">
+          <i class="demo-icon pyx-translate">&#xe84a;</i> <span class="i-name">pyx-translate</span><span class="i-code">0xe84a</span>
+        </div>
+        <div class="span3" title="Code: 0xe84b">
+          <i class="demo-icon pyx-gif">&#xe84b;</i> <span class="i-name">pyx-gif</span><span class="i-code">0xe84b</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer">Generated by <a href="https://fontello.com">fontello.com</a></div>
+  </body>
+</html>
