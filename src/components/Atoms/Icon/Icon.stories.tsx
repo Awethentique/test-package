@@ -3,8 +3,9 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import Icon from './Icon';
+import {Icon} from '@components';
 import {fontelloIconSet} from './IconData';
+import {IconProps} from './types';
 
 export default {
   title: 'Atoms/Icon',
