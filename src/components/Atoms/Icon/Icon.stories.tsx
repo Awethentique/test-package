@@ -2,6 +2,8 @@ import React from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+import {backgroundParameters} from '~/shared/backgroundParameters';
 
 import {Icon} from '@components';
 import {fontelloIconSet} from './IconData';
@@ -21,13 +23,14 @@ export default {
       type: 'figma',
       url: 'https://www.figma.com/file/Gv87WWZW5B9hYn3HKeBoaW/Pyxis-2?node-id=2%3A133767&t=QQz8ILzyJFrCxFyP-1',
     },
+    backgrounds: backgroundParameters,
   },
 } as ComponentMeta<typeof Icon>;
 
-export const Basic: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
-
-Basic.args = {
-  name: 'sticker',
+export const Basic = {
+  args: {
+    name: 'sticker',
+  },
 };
 
 const styles = StyleSheet.create({
@@ -54,23 +57,24 @@ const styles = StyleSheet.create({
   },
 });
 
-export const FontelloIconsAll: ComponentStory<typeof Icon> = (args) => {
-  return (
-    <FlatList
-      data={fontelloIconSet}
-      contentContainerStyle={styles.listContainer}
-      numColumns={3}
-      columnWrapperStyle={styles.row}
-      renderItem={({item}) => (
-        <View style={styles.listItem}>
-          <Icon {...args} name={item} />
-          <Text style={styles.text}>{item}</Text>
-        </View>
-      )}
-    />
-  );
-};
-
-FontelloIconsAll.args = {
-  size: 32,
+export const FontelloIconsAll = {
+  args: {
+    size: 32,
+  },
+  render: (args: typeof Icon) => {
+    return (
+      <FlatList
+        data={fontelloIconSet}
+        contentContainerStyle={styles.listContainer}
+        numColumns={3}
+        columnWrapperStyle={styles.row}
+        renderItem={({item}) => (
+          <View style={styles.listItem}>
+            <Icon {...args} name={item} />
+            <Text style={styles.text}>{item}</Text>
+          </View>
+        )}
+      />
+    );
+  },
 };
