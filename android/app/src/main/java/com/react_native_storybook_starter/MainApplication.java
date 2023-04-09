@@ -1,4 +1,4 @@
-package com.react_native_storybook_starter;
+package com.pyxisComponents;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

@@ -1,4 +1,4 @@
-package com.react_native_storybook_starter;
+package com.pyxisComponents;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "react_native_storybook_starter";
+    return "pyxisComponents";
   }
 
   /**
