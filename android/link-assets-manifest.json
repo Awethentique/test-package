@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/config.json",
+      "sha1": "c327dee406dfea0d6dde6576541316e58ae49806"
+    },
+    {
+      "path": "assets/fonts/pyx.eot",
+      "sha1": "bbf5599dacbbafc6e42c367025345bae2322c820"
+    },
+    {
+      "path": "assets/fonts/pyx.ttf",
+      "sha1": "715312d6ce121275bfeded7e897165c329d1dbfe"
+    }
+  ]
+}
