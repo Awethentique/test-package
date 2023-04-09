@@ -9,6 +9,9 @@ module.exports = {
     '@storybook/addon-coverage',
     '@storybook/addon-react-native-web',
   ],
+  features: {
+    interactionsDebugger: true,
+  },
   framework: '@storybook/react',
   core: {
     builder: 'webpack5',
