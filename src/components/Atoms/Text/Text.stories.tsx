@@ -2,7 +2,7 @@ import React from 'react';
 
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import {Text} from '../../index';
+import {Text} from '@components';
 import {fontelloIconSet} from '../Icon/IconData';
 
 export default {

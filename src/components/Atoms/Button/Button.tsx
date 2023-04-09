@@ -8,7 +8,7 @@ import {
 
 import {useStyles} from './styles';
 import type {ButtonProps} from './types';
-import {Icon, Text} from '../../index';
+import {Icon, Text} from '@components';
 
 const Button: FC<ButtonProps> = (props) => {
   const styles = useStyles(props);

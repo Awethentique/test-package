@@ -7,10 +7,17 @@
     /* Completeness */
 
     /* Skip type checking all .d.ts files. */
-    "skipLibCheck": true,                                
+    "skipLibCheck": true,          
+    /* Module Resolution Options */
+    "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "baseUrl": ".",                      
     /* Specify a set of entries that re-map imports to additional lookup locations. */
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
+      "@styles/*": ["./src/styles/*"],
+      "@styles": ["./src/styles"],
     },
   }
 }

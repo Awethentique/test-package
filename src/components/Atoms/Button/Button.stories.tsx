@@ -2,7 +2,10 @@ import React from 'react';
 
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import {Button} from '../../index';
+import {expect} from '@storybook/jest';
+import {within, userEvent, screen} from '@storybook/testing-library';
+
+import {Button} from '@components';
 import {fontelloIconSet} from '../Icon/IconData';
 
 export default {
