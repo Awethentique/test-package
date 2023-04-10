@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, View, Platform} from 'react-native';
 
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
@@ -31,6 +31,11 @@ export const Basic = {
   args: {
     name: 'sticker',
   },
+  notes: `
+     # Icon component using Fontello custom icons
+     
+     See Fontello All for the fill list.
+    `,
 };
 
 const styles = StyleSheet.create({
@@ -66,7 +71,7 @@ export const FontelloIconsAll = {
       <FlatList
         data={fontelloIconSet}
         contentContainerStyle={styles.listContainer}
-        numColumns={3}
+        numColumns={Platform.OS === 'web' ? 6 : 3}
         columnWrapperStyle={styles.row}
         renderItem={({item}) => (
           <View style={styles.listItem}>
