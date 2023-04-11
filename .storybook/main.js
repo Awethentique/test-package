@@ -1,14 +1,14 @@
 
 module.exports = {
   stories: [
-    // '../src/**/*.mdx',
+    '../src/**/*.mdx',
     '../src/components/**/*.stories.?(ts|tsx|js|jsx)'
   ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     'storybook-addon-designs',
-    // '@storybook/addon-docs',
+    '@storybook/addon-docs',
     '@storybook/addon-a11y',
     '@storybook/addon-interactions',
     '@storybook/addon-coverage',

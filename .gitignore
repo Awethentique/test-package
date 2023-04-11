@@ -60,5 +60,9 @@ buck-out/
 /ios/Pods/
 /vendor/bundle/
 
+# Logs
+build-storybook.log
 
+# Distribution
+storybook-static
 dist
