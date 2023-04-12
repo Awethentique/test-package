@@ -30,7 +30,7 @@ if (Platform.OS === 'web') {
   document.head.appendChild(style);
 }
 
-const Icon: FC<IconProps> = ({name, size = 24, color}) => {
+const Icon = ({name, size = 24, color}: IconProps) => {
   return <FontelloIcon name={name} size={size} color={color} />;
 };
 

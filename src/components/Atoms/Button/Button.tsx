@@ -5,12 +5,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {Icon, Text} from '@components';
 
 import {useStyles} from './styles';
 import type {ButtonProps} from './types';
-import {Icon, Text} from '@components';
 
-const Button: FC<ButtonProps> = (props) => {
+const Button = (props: ButtonProps) => {
   const styles = useStyles(props);
   const {icon, loading, title, type = 'labelLarge', numberOfLines} = props;
 

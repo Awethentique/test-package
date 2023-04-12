@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, StyleSheet, Text, View, Platform} from 'react-native';
 
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryObj} from '@storybook/react';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 import {backgroundParameters} from '~/shared/backgroundParameters';
 
@@ -9,7 +9,7 @@ import {Icon} from '@components';
 import {fontelloIconSet} from './IconData';
 import {IconProps} from './types';
 
-export default {
+const meta: Meta<typeof Icon> = {
   title: 'Atoms/Icon',
   component: Icon,
   argTypes: {
@@ -25,17 +25,15 @@ export default {
     },
     backgrounds: backgroundParameters,
   },
-} as ComponentMeta<typeof Icon>;
+};
 
-export const Basic = {
+export default meta;
+type Story = StoryObj<typeof Icon>;
+
+export const Basic: Story = {
   args: {
     name: 'sticker',
   },
-  notes: `
-     # Icon component using Fontello custom icons
-     
-     See Fontello All for the fill list.
-    `,
 };
 
 const styles = StyleSheet.create({
@@ -62,7 +60,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const FontelloIconsAll = {
+export const FontelloIconsAll: Story = {
   args: {
     size: 32,
   },

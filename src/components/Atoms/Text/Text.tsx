@@ -1,19 +1,16 @@
 import React, {FC} from 'react';
-import {Text as RNText, StyleSheet, TextProps} from 'react-native';
+import {Text as RNText, StyleSheet} from 'react-native';
 
-import {Color, typeScale, TypeScale, useColors} from '~/style';
+import {typeScale, useColors} from '~/style';
+import {TextProps} from './types';
 
-export type Props = TextProps & {
-  color?: Color;
-  type?: TypeScale;
-};
-
-const Text: FC<Props> = ({
+const Text: FC = ({
   color = 'onSurface',
   style,
   type = 'bodyMedium',
+  children,
   ...props
-}) => {
+}: TextProps) => {
   const colors = useColors();
 
   return (
@@ -23,8 +20,9 @@ const Text: FC<Props> = ({
         {color: colors[color]},
         style,
       ])}
-      {...props}
-    />
+      {...props}>
+      {children}
+    </RNText>
   );
 };
 

@@ -49,6 +49,7 @@ try {
 
 const getStories = () => {
   return {
+    "./src/components/Atoms/AntButton/AntButton.stories.tsx": require("../src/components/Atoms/AntButton/AntButton.stories.tsx"),
     "./src/components/Atoms/Button/Button.stories.tsx": require("../src/components/Atoms/Button/Button.stories.tsx"),
     "./src/components/Atoms/Icon/Icon.stories.tsx": require("../src/components/Atoms/Icon/Icon.stories.tsx"),
     "./src/components/Atoms/Text/Text.stories.tsx": require("../src/components/Atoms/Text/Text.stories.tsx"),
