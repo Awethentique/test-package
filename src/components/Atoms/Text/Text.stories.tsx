@@ -1,21 +1,16 @@
 import React from 'react';
 
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryObj} from '@storybook/react';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 import {backgroundParameters} from '~/shared/backgroundParameters';
 
 import {Text} from '@components';
 import {fontelloIconSet} from '../Icon/IconData';
 
-export default {
+const meta: Meta<typeof Text> = {
   title: 'Atoms/Text',
   component: Text,
-  argTypes: {
-    icon: {
-      options: fontelloIconSet,
-      control: {type: 'select'},
-    },
-  },
+  decorators: [withBackgrounds],
   parameters: {
     design: {
       type: 'figma',
@@ -26,17 +21,14 @@ export default {
       default: 'dark',
     },
   },
-} as ComponentMeta<typeof Text>;
+};
 
-export const Basic = {
+export default meta;
+type Story = StoryObj<typeof Text>;
+
+export const Basic: Story = {
   args: {
     children: 'Test Text',
   },
 };
 
-// const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
-
-// export const Basic = Template.bind({});
-// Basic.args = {
-  // children: 'Test Text',
-// };

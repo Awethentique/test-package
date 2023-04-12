@@ -1,22 +1,28 @@
-import React from 'react';
-
-import {Meta, StoryObj} from '@storybook/react';
+import type {ComponentMeta, StoryObj} from '@storybook/react';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 import {backgroundParameters} from '~/shared/backgroundParameters';
 
 import {expect} from '@storybook/jest';
 import {within, userEvent, screen} from '@storybook/testing-library';
 
-import {Button} from '@components';
+import {AntButton} from '@components';
 import {fontelloIconSet} from '../Icon/IconData';
 
-const meta: Meta<typeof Button> = {
-  title: 'Atoms/Button',
-  component: Button,
+const meta: ComponentMeta<typeof AntButton> = {
+  title: 'Atoms/AntButton',
+  component: AntButton,
   decorators: [withBackgrounds],
   argTypes: {
     icon: {
       options: fontelloIconSet,
+      control: {type: 'select'},
+    },
+    type: {
+      options: ['primary', 'warning', 'ghost'],
+      control: {type: 'select'},
+    },
+    size: {
+      options: ['large', 'small'],
       control: {type: 'select'},
     },
   },
@@ -30,11 +36,12 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof AntButton>;
 
 export const Basic: Story = {
   args: {
-    title: 'Test Button',
+    children: 'Button',
+    type: 'primary',
   },
   // play: async ({args, canvasElement}) => {
   //   const canvas = within(canvasElement);
@@ -43,28 +50,11 @@ export const Basic: Story = {
   // },
 };
 
-// Basic.play = async ({args, canvasElement}) => {
-//   const canvas = within(canvasElement);
-//   const button = canvas.getByRole('button');
-//   await userEvent.click(button);
-// };
-
-export const WithIcon: Story = {
+export const Disabled: Story = {
   args: {
-    title: 'Button with Icon',
-    icon: 'sticker',
+    children: 'Disabled Button',
+    type: 'primary',
+    disabled: true,
   },
-};
-
-export const WithIconAlternateBackground: Story = {
-  args: {
-    title: 'Button with Icon',
-    icon: 'sticker',
-  },
-  parameters: {
-    backgrounds: {
-      ...backgroundParameters,
-      default: 'dark',
-    },
-  },
+  // play: () => userEvent.click(screen.getByText('Disabled Button')),
 };

@@ -7,3 +7,10 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  Story => {
+    return  <Story/>
+
+  }
+];
