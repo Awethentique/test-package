@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View, Platform} from 'react-native';
+import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
 
 import {Meta, StoryObj} from '@storybook/react';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
@@ -7,11 +7,11 @@ import {backgroundParameters} from '~/shared/backgroundParameters';
 
 import {Icon} from '@components';
 import {fontelloIconSet} from './IconData';
-import {IconProps} from './types';
 
 const meta: Meta<typeof Icon> = {
   title: 'Atoms/Icon',
   component: Icon,
+  decorators: [withBackgrounds],
   argTypes: {
     name: {
       options: fontelloIconSet,

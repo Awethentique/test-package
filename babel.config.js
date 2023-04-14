@@ -16,6 +16,6 @@ module.exports = {
       },
       'root-alias',
     ],
-    ["import", { libraryName: "@ant-design/react-native" }],
+    ['import', { libraryName: '@ant-design/react-native' }],
   ],
 };

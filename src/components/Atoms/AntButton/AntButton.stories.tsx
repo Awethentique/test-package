@@ -56,5 +56,12 @@ export const Disabled: Story = {
     type: 'primary',
     disabled: true,
   },
-  // play: () => userEvent.click(screen.getByText('Disabled Button')),
+};
+
+export const WithIcon: Story = {
+  args: {
+    children: 'Icon Button',
+    type: 'primary',
+    icon: 'sticker',
+  },
 };

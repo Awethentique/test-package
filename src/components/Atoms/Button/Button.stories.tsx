@@ -4,8 +4,8 @@ import {Meta, StoryObj} from '@storybook/react';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 import {backgroundParameters} from '~/shared/backgroundParameters';
 
-import {expect} from '@storybook/jest';
-import {within, userEvent, screen} from '@storybook/testing-library';
+// import {expect} from '@storybook/jest';
+// import {within, userEvent, screen} from '@storybook/testing-library';
 
 import {Button} from '@components';
 import {fontelloIconSet} from '../Icon/IconData';
@@ -42,12 +42,6 @@ export const Basic: Story = {
   //   await userEvent.click(button);
   // },
 };
-
-// Basic.play = async ({args, canvasElement}) => {
-//   const canvas = within(canvasElement);
-//   const button = canvas.getByRole('button');
-//   await userEvent.click(button);
-// };
 
 export const WithIcon: Story = {
   args: {

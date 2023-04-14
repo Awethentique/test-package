@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {Meta, StoryObj} from '@storybook/react';
-import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
-import {backgroundParameters} from '~/shared/backgroundParameters';
-
 import {Text} from '@components';
-import {fontelloIconSet} from '../Icon/IconData';
+
+import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+import {Meta, StoryObj} from '@storybook/react';
+
+import {backgroundParameters} from '~/shared/backgroundParameters';
 
 const meta: Meta<typeof Text> = {
   title: 'Atoms/Text',
@@ -31,4 +31,3 @@ export const Basic: Story = {
     children: 'Test Text',
   },
 };
-

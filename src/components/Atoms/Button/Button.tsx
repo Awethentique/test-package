@@ -1,10 +1,11 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {
   ActivityIndicator,
   StyleSheet,
   TouchableOpacity,
   View,
 } from 'react-native';
+
 import {Icon, Text} from '@components';
 
 import {useStyles} from './styles';
