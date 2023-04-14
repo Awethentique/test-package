@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
+import React from 'react';
 
 import {Button as AntMobileButton} from '@ant-design/react-native';
-import {Icon} from '@components';
+import {Icon, Text} from '@components';
 import type {ButtonProps} from './types';
 
 const AntButton = ({
@@ -11,14 +11,22 @@ const AntButton = ({
   children,
   ...props
 }: ButtonProps) => {
+  const ButtonText = () => {
+    if (icon) {
+      return (
+        <>
+          <Icon name={icon} />
+          <Text>{children}</Text>
+        </>
+      );
+    }
+    return <Text>{children}</Text>;
+  };
   return (
-    <AntMobileButton
-      {...props}
-      size={size}
-      testID={testId}
-      style={{backgroundColor: 'red'}}>
-      {icon && <Icon name={icon} />}
-      {children}
+    <AntMobileButton {...props} size={size} testID={testId}>
+      {!!icon && <Icon name={icon} />}
+      {/* <Icon name="sticker" /> */}
+      <Text>{children}</Text>
     </AntMobileButton>
   );
 };
