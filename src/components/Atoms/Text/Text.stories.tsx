@@ -1,11 +1,11 @@
-import React from 'react';
-
 import {Text} from '@components';
 
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 import {Meta, StoryObj} from '@storybook/react';
 
 import {backgroundParameters} from '~/shared/backgroundParameters';
+// import {expect} from '@storybook/jest';
+// import {screen, userEvent, within} from '@storybook/testing-library';
 
 const meta: Meta<typeof Text> = {
   title: 'Atoms/Text',
