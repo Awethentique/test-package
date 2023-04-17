@@ -1,12 +1,13 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {Platform} from 'react-native';
 
 import {createIconSetFromFontello} from 'react-native-vector-icons';
 
-// import fontelloConfig from '../../../../assets/fontello/config.json';
 import type {IconProps} from './types';
 import fontelloConfig from '../../../../assets/fonts/config.json';
 import iconFont from '../../../../assets/fonts/pyx.ttf';
+import {useColors, Color} from '~/style';
+import {ColorValue} from 'react-native';
 
 const FontelloIcon = createIconSetFromFontello(fontelloConfig);
 
@@ -30,8 +31,17 @@ if (Platform.OS === 'web') {
   document.head.appendChild(style);
 }
 
-const Icon = ({name, size = 24, color}: IconProps) => {
-  return <FontelloIcon name={name} size={size} color={color} />;
+const Icon = ({name, size = 24, color = 'onSurface', style}: IconProps) => {
+  const colors = useColors();
+
+  return (
+    <FontelloIcon
+      name={name}
+      size={size}
+      color={colors[color as Color]}
+      style={style}
+    />
+  );
 };
 
 export default Icon;

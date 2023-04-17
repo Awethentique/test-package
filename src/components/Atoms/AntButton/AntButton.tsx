@@ -2,6 +2,8 @@ import React from 'react';
 
 import {Button as AntMobileButton} from '@ant-design/react-native';
 import {Icon, Text} from '@components';
+
+import {useStyles} from './styles';
 import type {ButtonProps} from './types';
 
 const AntButton = ({
@@ -11,6 +13,16 @@ const AntButton = ({
   children,
   ...props
 }: ButtonProps) => {
+  // const styleProps = {
+  //   variant: props.type,
+
+  // }
+  // const styles = useStyles(styleProps);
+
+  // const styles = useStyles(props);
+  // const AntButton = (props: ButtonProps) => {
+  // const {testId = 'button-test-id', size = 'large', icon, children} = props;
+
   const ButtonText = () => {
     if (icon) {
       return (
