@@ -1,5 +1,10 @@
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
-export const decorators = [withBackgrounds];
+import {Provider} from '@ant-design/react-native';
+import customTheme from '~/style/antCustomTheme';
+
+export const decorators = [withBackgrounds, Story => {
+    return  <Provider theme={customTheme}><Story/></Provider>
+  }];
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
   controls: {

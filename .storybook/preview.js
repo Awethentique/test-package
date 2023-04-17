@@ -1,3 +1,6 @@
+import {Provider} from '@ant-design/react-native';
+import customTheme from '~/style/antCustomTheme';
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -10,7 +13,6 @@ export const parameters = {
 
 export const decorators = [
   Story => {
-    return  <Story/>
-
+    return  <Provider theme={customTheme}><Story/></Provider>
   }
 ];
