@@ -1,5 +1,4 @@
 import {Text} from '@components';
-
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
 import {Meta, StoryObj} from '@storybook/react';
 

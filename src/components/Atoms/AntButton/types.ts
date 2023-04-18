@@ -2,7 +2,7 @@ import {TextStyle as RNTextStyle, ViewStyle as RNViewStyle} from 'react-native';
 
 import type {ButtonProps as AntButtonProps} from '@ant-design/react-native/es/button/index';
 
-import {Color, TypeScale} from '~/style';
+import {Color} from '~/style';
 
 import {FontelloIcons} from '../Icon/types';
 
@@ -34,5 +34,3 @@ export interface ButtonStyleProps {
   innerStyle?: RNViewStyle;
   color?: Color;
 }
-
-

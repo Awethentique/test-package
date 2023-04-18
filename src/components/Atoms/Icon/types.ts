@@ -1,4 +1,5 @@
 import type {ColorValue, ViewStyle} from 'react-native';
+
 import type {Color} from '~/style';
 
 import {fontelloIconSet} from './IconData';

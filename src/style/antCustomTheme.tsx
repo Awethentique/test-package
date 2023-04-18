@@ -1,5 +1,5 @@
 // import {elevation, useColors} from '~/style';
-import {light, dark} from '~/style/colors';
+import {light} from '~/style/colors';
 
 const theme = light;
 

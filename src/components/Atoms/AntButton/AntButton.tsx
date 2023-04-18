@@ -1,11 +1,11 @@
 import React from 'react';
+import {StyleSheet} from 'react-native';
 
 import {Button as AntMobileButton} from '@ant-design/react-native';
 import {Icon, Text} from '@components';
 
 import {useStyles} from './styles';
 import type {ButtonProps} from './types';
-import {StyleSheet, View} from 'react-native';
 
 const AntButton = ({
   testId = 'button-test-id',
@@ -13,9 +13,9 @@ const AntButton = ({
   size = 'large',
   icon,
   children,
-  variant,
   loading,
   numberOfLines,
+  variant,
   ...props
 }: ButtonProps) => {
   let variantType: 'primary' | 'ghost' | 'warning' | undefined = 'primary';
@@ -27,6 +27,7 @@ const AntButton = ({
       break;
     case 'error':
       variantType = 'warning';
+      break;
     case 'filled':
     case 'elevated':
     case 'outlinedFilled':
@@ -51,7 +52,6 @@ const AntButton = ({
       disabled={disabled}
       testID={testId}
       style={styles.inner}>
-      {/* <View style={styles.inner}> */}
       {!loading && icon && (
         <Icon name={icon} size={18} color={styles.title.color} />
       )}
@@ -61,7 +61,6 @@ const AntButton = ({
         numberOfLines={numberOfLines}>
         {children}
       </Text>
-      {/* </View> */}
     </AntMobileButton>
   );
 };
