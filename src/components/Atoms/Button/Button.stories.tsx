@@ -1,13 +1,12 @@
-import React from 'react';
-
-import {Meta, StoryObj} from '@storybook/react';
+import {Button} from '@components';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+import {Meta, StoryObj} from '@storybook/react';
+
 import {backgroundParameters} from '~/shared/backgroundParameters';
 
 // import {expect} from '@storybook/jest';
 // import {within, userEvent, screen} from '@storybook/testing-library';
 
-import {Button} from '@components';
 import {fontelloIconSet} from '../Icon/IconData';
 
 const meta: Meta<typeof Button> = {

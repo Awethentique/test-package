@@ -1,11 +1,12 @@
 import React from 'react';
 import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
 
-import {Meta, StoryObj} from '@storybook/react';
+import {Icon} from '@components';
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+import {Meta, StoryObj} from '@storybook/react';
+
 import {backgroundParameters} from '~/shared/backgroundParameters';
 
-import {Icon} from '@components';
 import {fontelloIconSet} from './IconData';
 
 const meta: Meta<typeof Icon> = {

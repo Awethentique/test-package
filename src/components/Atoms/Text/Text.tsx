@@ -2,6 +2,7 @@ import React from 'react';
 import {Text as RNText, StyleSheet} from 'react-native';
 
 import {typeScale, useColors} from '~/style';
+
 import {TextProps} from './types';
 
 const Text = ({
