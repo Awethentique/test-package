@@ -4,7 +4,7 @@ import {light, dark} from '~/style/colors';
 const theme = light;
 
 const brandPrimary = theme.primary;
-const brandPrimaryTap = '#5CCF63';
+const brandPrimaryTap = theme.secondary;
 
 export default {
   // default theme
@@ -116,7 +116,6 @@ export default {
   button_font_size_sm: 12,
 
   primary_button_fill: brandPrimary,
-  // primary_button_fill: useColors().primary,
   primary_button_fill_tap: brandPrimaryTap,
 
   ghost_button_color: brandPrimary, // 同时应用于背景、文字颜色、边框色

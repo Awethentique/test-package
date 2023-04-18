@@ -19,8 +19,16 @@ const meta: ComponentMeta<typeof AntButton> = {
       options: fontelloIconSet,
       control: {type: 'select'},
     },
-    type: {
-      options: ['primary', 'warning', 'ghost'],
+    variant: {
+      options: [
+        'filled',
+        'outlined',
+        'text',
+        'elevated',
+        'tonal',
+        'error',
+        'outlinedFilled',
+      ],
       control: {type: 'select'},
     },
     size: {
@@ -42,8 +50,7 @@ type Story = StoryObj<typeof AntButton>;
 
 export const Basic: Story = {
   args: {
-    children: 'Button',
-    type: 'primary',
+    children: 'Test Button',
   },
   // play: async ({args, canvasElement}) => {
   //   const canvas = within(canvasElement);
@@ -55,7 +62,6 @@ export const Basic: Story = {
 export const Disabled: Story = {
   args: {
     children: 'Disabled Button',
-    type: 'primary',
     disabled: true,
   },
 };
@@ -63,7 +69,6 @@ export const Disabled: Story = {
 export const WithIcon: Story = {
   args: {
     children: 'Icon Button',
-    type: 'primary',
     icon: 'sticker',
   },
 };
