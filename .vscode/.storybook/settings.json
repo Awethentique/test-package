@@ -1,0 +1,6 @@
+{
+  "react-native-storybooks.host": "localhost",
+  "react-native-storybooks.port": 6006,
+  "react-native-storybooks.storyRegex": "**/*.stories.*",
+  "react-native-storybooks.storybookFilterRegex": ".",
+}
