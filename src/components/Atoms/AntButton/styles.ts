@@ -2,8 +2,7 @@ import {ColorValue, StyleSheet} from 'react-native';
 
 import {elevation, useColors} from '~/style';
 import {Colors} from '~/style/colors';
-
-import {ButtonProps} from '../Button/types';
+import {ButtonStyleProps} from './types';
 
 const getContainerStyles = (colors: Colors) =>
   StyleSheet.create({
@@ -17,19 +16,23 @@ const getContainerStyles = (colors: Colors) =>
     },
     filled: {
       backgroundColor: colors.primary,
+      borderColor: colors.primary,
     },
     fullWidth: {
       height: 60,
     },
     tonal: {
       backgroundColor: colors.secondary,
+      borderColor: colors.secondary,
     },
     error: {
       backgroundColor: colors.error,
+      borderColor: colors.error,
     },
     elevated: {
       ...elevation.level1,
       backgroundColor: colors.surface,
+      borderColor: colors.surface,
     },
     disabled: {
       opacity: 0.3,
@@ -42,6 +45,7 @@ const getContainerStyles = (colors: Colors) =>
     outlinedFilled: {
       backgroundColor: 'rgba(111, 88, 255, 0.1)',
       color: '#6F58FF',
+      borderWidth: 0,
     },
     outlinedDisabled: {
       borderColor: `${colors.onSurface}1E`,
@@ -51,6 +55,7 @@ const getContainerStyles = (colors: Colors) =>
       paddingHorizontal: undefined,
       height: undefined,
       borderRadius: undefined,
+      borderWidth: 0,
     },
   });
 
@@ -82,8 +87,9 @@ export const useStyles = ({
   color,
   innerStyle,
   textStyle,
-}: ButtonProps) => {
+}: ButtonStyleProps) => {
   const colors = useColors();
+  // const title = children && typeof children === 'string';
 
   const innerStyles = getContainerStyles(colors);
   const titleStyles = getTitleStyles(colors, title, color);

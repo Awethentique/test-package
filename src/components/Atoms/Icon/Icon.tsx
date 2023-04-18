@@ -31,14 +31,13 @@ if (Platform.OS === 'web') {
   document.head.appendChild(style);
 }
 
-const Icon = ({name, size = 24, color = 'onSurface', style}: IconProps) => {
-  const colors = useColors();
-
+const Icon = ({name, size = 24, color, style}: IconProps) => {
   return (
     <FontelloIcon
       name={name}
       size={size}
-      color={colors[color as Color]}
+      // color={colors[color as Color]}
+      color={color}
       style={style}
     />
   );
