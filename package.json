@@ -1,5 +1,5 @@
 {
-  "name": "pyxisComponents",
+  "name": "pyxis-components",
   "version": "0.0.1",
   "files": [
     "dist"
@@ -17,6 +17,7 @@
     "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "build": "tsc",
     "chromatic": "npx chromatic --project-token=a94401098b0f"
   },
   "dependencies": {
