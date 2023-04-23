@@ -1,6 +1,7 @@
 {
   "name": "pyxis-components",
   "version": "0.0.1",
+  "license": "UNLICENSED",
   "files": [
     "dist"
   ],
