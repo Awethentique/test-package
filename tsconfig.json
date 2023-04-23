@@ -2,6 +2,23 @@
   "extends": "@tsconfig/react-native/tsconfig.json",
   /* Recommended React Native TSConfig base */
   "compilerOptions": {
+    "outDir": "dist",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "jsx": "react",
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Completeness */
