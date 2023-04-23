@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   /* Recommended React Native TSConfig base */
+  /* Packaging settings */
   "compilerOptions": {
     "outDir": "dist",
     "target": "es5",
